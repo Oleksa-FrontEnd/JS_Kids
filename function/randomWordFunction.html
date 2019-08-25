@@ -7,10 +7,7 @@
 <body>
 <script>
 
-    //Генератор случайных дразнилок
-    var randomBodyParts = ["глаз", "нос", "череп"];
-    var randomAdjectives = ["вонючая", "унылая", "дурацкая"];
-    var randomWords = ["муха", "выдра", "дубина", "мартышка", "крыса"];
+                //Генератор случайных дразнилок
 
     //поместить этот код в функцию, можно многократно вызывать
     //его для получения случайного слова из массива
@@ -18,14 +15,18 @@
         return words[Math.floor(Math.random() * words.length)];
     };
 
-    var randomBodyParts = ["глаз", "нос", "череп"];
-    var randomAdjectives = ["вонючая", "унылая", "дурацкая"];
-    var randomWords = ["муха", "выдра", "дубина", "мартышка", "крыса"];
-    // Соединяем случайные строки в предложение:
-    var randomString = "У тебя " + pickRandomWord(randomBodyParts) +
-" словно " + pickRandomWord(randomAdjectives) +
-" " + pickRandomWord(randomWords) + "!!!";
-    console.log(randomString);
+    var generateRandomInsult = function () {
+        var randomBodyParts = ["глаз", "нос", "череп"];
+        var randomAdjectives = ["вонючая", "унылая", "дурацкая"];
+        var randomWords = ["муха", "выдра", "дубина", "мартышка", "крыса"];
+
+                // Соединяем случайные строки в предложение:
+        var randomString = "У тебя " + pickRandomWord(randomBodyParts) +
+ " словно " + pickRandomWord(randomAdjectives) +
+ " " + pickRandomWord(randomWords) + "!!!";
+ return randomString;
+    };
+               console.log(generateRandomInsult()) ;
 
 </script>
 

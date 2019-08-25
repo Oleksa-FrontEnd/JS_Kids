@@ -6,31 +6,6 @@
 </head>
 <body>
 <script>
-    //На каждом повторе цикла функция выводит в консоль строку i + « =^.^=»
-    var drawCats = function (howManyTimes) {
-        for (var i = 0; i < howManyTimes; i++) {
-            console.log(i + " =^.^=");
-        }
-    };
-    drawCats(7);
-
-    //вариант 2 -  Функция printMultipleTimes печатает строку, переданную
-    //в аргументе whatToDraw столько раз, сколько указано в аргументе
-    //howManyTimes.
-    var printMultipleTimes = function (howManyTimes, whatToDraw) {
-        for (var i = 0; i < howManyTimes; i++) {
-            console.log(i + " " + whatToDraw);
-        }
-    };
-    printMultipleTimes(7, "=^_^=")
-
-    var double = function (number) {
-         return number * 2;
-    };
-    //double(3);
-    //6
-    //double(5) + double(6);
-    //22
 
     //Генератор случайных дразнилок
     var randomBodyParts = ["глаз", "нос", "череп"];
@@ -46,8 +21,7 @@
     // Соединяем случайные строки в предложение:
     var randomInsult = "У тебя " + randomBodyPart + " словно" + randomAdjective +" " + randomWord + "!!!";
         randomInsult;
-
-
+        
 </script>
 
 

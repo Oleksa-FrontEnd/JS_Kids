@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sumatorJS</title>
+</head>
+<body>
+<script>
+    //Совпадают ли массивы?
+    function areArraysSame(a, b) {
+        if (a === b) return true;
+        if (a == null || b == null) return false;
+        if (a.length != b.length) return false;
+
+        for (var i = 0; i < a.length; ++i) {
+            if (a[i] !== b[i]) return false;
+        }
+        return true;
+    }
+    var a = [1,2,3];
+    var b = [1,2,3];
+    areArraysSame(a, b);
+</script>
+</body>
+</html>

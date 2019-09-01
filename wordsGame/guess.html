@@ -2,36 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Моя первая настоящая HTML-страничка</title>
+    <title> «Виселица» и функции</title>
 </head>
 <body>
 
 <p>Сначало было слово</p>
 <script>
-    //// Создаем массив со словами
-    var words = [
-        "программа",
-        "макака",
-        "прекрасный",
-        "оладушек"
-    ];
 
-    //генератор случайного слова
-    var wordX = words[Math.floor(Math.random() * words.length)]; //генератор случайного слова
 
-    //Создаем итоговый массив и заменяем каждую букву на символ "_"
-    var answerArray = []; //answerArray — массив с ответом
-        for (var i = 0; i <wordX.length; i++) {
-        answerArray[i] = "_";
-        }
+
 
     var remainingLetters = wordX.length; //Remaining letters — оставшиеся буквы
     var limit;
 
     //Обработка введенного ответа
-    while (remainingLetters > 0) {
-        // Показываем состояние игры
-        alert(answerArray.join(" "));
+
         // Запрашиваем вариант ответа;
         var guess = prompt("Угадайте букву или нажмите Отмена для выхода из игры.");
             if (guess === null) {
@@ -58,6 +43,54 @@
 
     alert("Отлично! Было загадано слово " + wordX);
 
+    // Создайте здесь свои функции
+    // word: загаданное слово
+    //// Создаем массив со словами
+    var words = [
+        "программа",
+        "макака",
+        "прекрасный",
+        "оладушек"
+    ];
+
+    // answerArray: итоговый массив
+    var pickWord = function () {
+        // Возвращает случайно выбранное слово
+        words[Math.floor(Math.random() * words.length)];
+    };
+    var word = pickWord();
+    var setupAnswerArray = function (word) {
+        // Возвращает итоговый массив для заданного слова word
+        var answerArray = []; //answerArray — массив с ответом
+        for (var i = 0; i <words.length; i++) {
+            answerArray[i] = "_"; //заменяем каждую букву на символ "_"
+    };
+
+    var answerArray = setupAnswerArray(word);
+    // remainingLetters: сколько букв осталось угадать
+        while (remainingLetters > 0) {
+            // Показываем состояние игры
+            alert(answerArray.join(" "));
+        var showPlayerProgress = function (answerArray) {
+            // С помощью alert отображает текущее состояние игры
+        };
+    var remainingLetters = word.length;
+    while (remainingLetters > 0) {
+        showPlayerProgress(answerArray);
+        // guess: ответ игрока
+        var guess = getGuess();
+        if (guess === null) {
+            break;
+        } else if (guess.length !== 1) {
+            alert("Пожалуйста, введите одиночную букву.");
+        } else {
+            // correctGuesses: количество открытых букв
+            var correctGuesses = updateGameState(guess, word,
+                answerArray);
+            remainingLetters -= correctGuesses;
+        }
+    }
+    showAnswerAndCongratulatePlayer(answerArray);
 </script>
 </body>
 </html>

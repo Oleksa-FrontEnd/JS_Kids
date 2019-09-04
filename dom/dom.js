@@ -1,17 +1,31 @@
-var headingElement = document.getElementById("main-heading");
+var headingElement = document.getElementById("heading");
     console.log(headingElement.innerHTML);
 
 var newHeadingText = prompt("Введите новый заголовок:");
- $("#main-heading").text(newHeadingText);
+ $("#heading").text(newHeadingText);
 
-var mainFrend  = ["Jon", "Jek", "Gnom"];
-for (var i = 0; i < mainFrend.length; i++) {
-    var hobby = prompt("Чем увлекается друг?");
-    $("body").append("<p>" + mainFrend[i] + "-" + hobby + "</p>");
+$("h1").fadeTo(500, 0.5);
+
+//Анимация элементов с помощью setInterval
+var leftOffset = 0;
+var moveHeading = function () {
+    $("#heading").offset({ left: leftOffset});
+    leftOffset++;
+    if (leftOffset > 200) {
+        leftOffset = 0;
+    }
 };
+ setInterval(moveHeading, 30);
 
-$("p").append(" лучший").fadeIn(2000);
+/*for (var i=0; i<2; i++) {
+    $("#main-heading").fadeOut().delay(500).fadeIn();
+}
 
-$("h1").slideUp(1000).slideDown(1000);/* элементы исчезают, уплывая вверх,
-                                        а при вызове slideDown появляются, опускаясь сверху.
-                                        */
+ */
+
+setInterval(function(){
+    blink.style.opacity ^= 1 ;
+   },1e3);
+
+
+
